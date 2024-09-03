@@ -1,0 +1,43 @@
+---
+skip_repo_check: True
+config_source: example.yaml
+use_gpu: False
+#model: Meta-Llama-3-8B-instruct
+model: pythia-70m
+use_qlora_config: True
+use_biomed_ft: False
+use_flash_attention: False
+run_config:
+  eval_set: data/covidence/review_117787/val_split.txt
+  num_shots: 0
+  batch_size: 12
+  trunc_dataset: null
+  results_dir: run_data
+  prompt_format: system_message
+  allow_pass: False
+train_config:
+  peft_method: lora
+  train_set: data/covidence/review_117787/balanced_train_split.txt
+  trunc_dataset: null
+  models_dir: ft_models
+  num_epochs: 5
+  batch_size: 12
+  init_lr: 0.00005
+  continue_from_job: null
+  eval_every: 0.1
+  save_every: 0.1
+  log_every: 0.05
+  use_lora_plus: True
+  lora_plus_ratio: 16
+  lora_r: 4
+  lora_alpha: 8
+  lora_dropout: 0.05
+  gradient_accumulation_steps: 1
+  seed: 1
+  save_model_local: True
+wandb_config:
+  log: False
+  save_model_wandb: False
+  log_dir: run_data
+  entity: null
+  project: null

@@ -1,0 +1,72 @@
+short_sys_msg: |-
+  You are an academic performing a systematic literature review, and your task is to determine whether a given paper should be included in a review.
+instruction: |-
+  Your task is to analyse the provided title and abstract of research papers to determine whether they should be included in a systematic review.
+
+  The review is titled "{REVIEW_TITLE}"
+
+  {CRITERIA}
+
+  Based on the title and abstract provided below, if it seems possible that the paper fulfills the above criteria, please respond with 'Yes'. If you are sure that the paper does not fulfill the criteria, please respond with "No".
+
+instruction_no_title: |-
+  Your task is to analyse the provided title and abstract of research papers to determine whether they should be included in a systematic review.
+
+  {CRITERIA}
+
+  Based on the title and abstract provided below, if it seems possible that the paper fulfills the above criteria, please respond with 'Yes'. If you are sure that the paper does not fulfill the criteria, please respond with "No".
+
+
+instruction_allow_pass: |-
+  Your task is to analyse the provided title and abstract of research papers to determine whether they should be included in a systematic review.
+
+  The review is titled "{REVIEW_TITLE}"
+
+  {CRITERIA}
+
+  Based on the above criteria, analyse the provided titles and abstracts and determine whether the papers should be included in the review. Please respond only with either "Yes", "No" or "Pass" if you are unsure.
+
+instruction_no_criteria: |-
+  Your task is to analyse the provided title and abstract of research papers to determine whether they should be included in a systematic review.
+
+criteria_no_instructions: |-
+  To help you decide whether to include the paper, here are the details of the review.
+
+  The review is titled "{REVIEW_TITLE}"
+
+  {CRITERIA}
+
+  Based on the title and abstract provided below, if it seems possible that the paper fulfills the above criteria, please respond with 'Yes'. If you are sure that the paper does not fulfill the criteria, please respond with "No".
+
+examples: |-
+  Here are some examples to get you started:
+
+  {EXAMPLES}
+
+paper: |-
+  Title: {title}
+
+  Abstract: {abstract}
+
+  Should the paper be considered for inclusion?
+
+reinstruct: |-
+  Your turn! Should the following paper be included in the review?
+
+reminder: |-
+  Your turn! As a reminder, the inclusion criteria are:
+
+  {SHORT_CRITERIA}
+
+  This is the research paper to consider:
+
+biomed_llama_scaffold: |-
+  Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+  ### Instruction:
+  {INSTRUCTION}
+  
+  ### Input:
+  {INPUT}
+  
+  ### Response:
